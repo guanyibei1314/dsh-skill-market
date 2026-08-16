@@ -173,9 +173,32 @@ metadata:
 
 ## 当前限制与路线图
 
+### 建议下一步（按优先级）
+
+1. **补完 DSH Web UI 端到端测试**
+   - 完成 Playwright 点击链路：**设置 → 插件 → 技能市场**。
+   - 验证市场列表、搜索、预览、复制安装命令。
+   - 若条件允许，加入“一键安装到当前 DSH home”的宿主 RPC，替代只复制命令。
+2. **发布 DSH 插件到 npm**
+   - 执行 `npm publish --workspace @dsh-skill-market/dsh-skill-marketplace`。
+   - 配置 GitHub Actions：打 tag 后自动 `npm run pack:plugin`，并把 tarball 作为 Release 附件。
+   - 最终目标：支持 `dsh plugin add <tarball-url>` 或 `dsh plugin add @dsh-skill-market/dsh-skill-marketplace`。
+3. **部署为公网社区市场**
+   - 加 Dockerfile + 反向代理 + HTTPS。
+   - 存储从文件系统迁到 SQLite/Postgres。
+   - 增加用户登录（OIDC/GitHub）、发布审核、技能签名/哈希、评分/举报/下载统计持久化。
+4. **丰富运营能力**
+   - Git 源自动索引（`dsh-plugin` topic）。
+   - 版本化与回滚、审计日志、限流持久化、数据导出。
+   - 将市场页进一步深度集成进 DSH UI（不限于设置页标签）。
+
+### 当前限制
+
 - MVP：单实例、文件即数据库、公开只读、API Key 发布。
-- 待做：Git 源自动索引（`dsh-plugin` topic）、版本化与回滚、评分/下载统计持久化、发布审核、技能包签名、SQLite/Postgres 存储、OIDC 登录、marketplace 自身作为官方 UI 插件。
+- 未完成：账号/审核/数据库、正式 Playwright 点击链路、npm 发布、GitHub Release 产物。
 - DSH preview 的接口可能变化：请锁定本插件 `peerDependencies` 并在升级 `dsh` 后重跑 `npm test`。
+
+详细交接信息见 [docs/HANDOVER.md](docs/HANDOVER.md)，安装方式见 [docs/INSTALL.md](docs/INSTALL.md)。
 
 ## 参考
 
