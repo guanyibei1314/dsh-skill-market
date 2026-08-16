@@ -1,0 +1,23 @@
+{
+  "name": "dsh-skill-market",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "面向 DeepSeek Harness (DSH) 的技能市场：Web 市场 + 远程 SkillProvider 插件 + 本地安装 CLI",
+  "scripts": {
+    "seed": "node scripts/seed.mjs",
+    "dev:api": "node apps/api/src/server.mjs",
+    "start": "node apps/api/src/server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "market": "node tools/cli/dsh-market.mjs",
+    "pack:plugin": "npm pack --workspace @dsh-skill-market/dsh-skill-marketplace --pack-destination ./dist"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tools/*"
+  ]
+}

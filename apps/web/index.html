@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DSH 技能市场 · DeepSeek Harness Skill Market</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">dsh</span>
+      <div>
+        <h1>DSH 技能市场</h1>
+        <p class="subtitle">Everything is a Plugin · 让好技能被每个会话发现</p>
+      </div>
+    </div>
+    <div class="stats" id="stats">加载中…</div>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="搜索技能名称、描述或标签…" autocomplete="off" />
+      <div class="tags" id="tags"></div>
+    </section>
+    <section class="cards" id="cards"></section>
+  </main>
+
+  <dialog id="detail">
+    <div class="dialog-head">
+      <div>
+        <h2 id="detail-name"></h2>
+        <p id="detail-description"></p>
+      </div>
+      <button id="close-detail" class="ghost" aria-label="关闭">×</button>
+    </div>
+    <div class="meta" id="detail-meta"></div>
+    <h3>安装方式</h3>
+    <div class="tabs" id="install-tabs">
+      <button data-tab="cli" class="active">本地安装</button>
+      <button data-tab="remote">远程 provider</button>
+      <button data-tab="manual">手动复制</button>
+    </div>
+    <pre class="code" id="detail-install"></pre>
+    <h3>SKILL.md 预览</h3>
+    <pre class="code" id="detail-content">加载中…</pre>
+  </dialog>
+
+  <footer>MVP · API 默认 <code>/api/v1</code> · 发布需要 <code>MARKET_API_KEY</code></footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

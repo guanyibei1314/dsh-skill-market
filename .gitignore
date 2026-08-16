@@ -1,0 +1,8 @@
+node_modules/
+registry/.cache/
+registry/data/
+*.log
+.env
+.DS_Store
+
+dist/

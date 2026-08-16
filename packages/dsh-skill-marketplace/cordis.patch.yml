@@ -1,0 +1,9 @@
+- insert:
+    - id: skill-marketplace
+      name: '@dsh-skill-market/dsh-skill-marketplace'
+      config:
+        endpoint: 'http://127.0.0.1:3081'
+        providerName: marketplace
+        rank: 450
+        timeoutMs: 10000
+        cacheTtlMs: 60000
