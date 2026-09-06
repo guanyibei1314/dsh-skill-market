@@ -1,0 +1,8 @@
+{
+  "name": "frontend-design-os",
+  "version": "2.0.0",
+  "author": "guanyibei1314",
+  "license": "MIT",
+  "tags": ["frontend", "ui", "ux", "design-system", "responsive", "visual-review"],
+  "entry": "SKILL.md"
+}
