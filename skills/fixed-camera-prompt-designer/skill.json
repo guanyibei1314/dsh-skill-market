@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "author": "guanyibei1314",
+  "license": "MIT",
+  "tags": [
+    "image-prompt",
+    "cctv",
+    "fixed-camera",
+    "fisheye",
+    "infrared",
+    "series"
+  ],
+  "homepage": "https://github.com/guanyibei1314/dsh-skill-market/tree/master/skills/fixed-camera-prompt-designer"
+}
